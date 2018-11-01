@@ -19,7 +19,7 @@ var (
 	containerName = pflag.StringP("container", "c", "", "Container in which to execute the command. Defaults to only container if there is only one container in the pod.")
 	namespace     = pflag.StringP("namespace", "n", "", "Namespace where pod is deployed. Defaults to default.")
 	command       = pflag.StringSliceP("command", "e", []string{"sh"}, "The remote command to execute. Defaults to sh.")
-	help          = pflag.BoolP("help", "h", false, "Print help for commands.")
+	help          = pflag.BoolP("help", "h", false, "Prints help for application.")
 )
 
 func main() {
@@ -108,14 +108,14 @@ func validUsageAndExitOnFailure() {
 
 func printHelpAndExit() {
 	fmt.Println("Execute a command in a container.")
-	fmt.Printf("Usage: \n \t '%s [-c CONTAINER] [-n NAMESPACE] POD_NAME [COMMAND]'\n", os.Args[0])
+	fmt.Printf("Usage: \n \t '%s POD_NAME [-c CONTAINER] [-n NAMESPACE] [-e COMMAND]'\n", os.Args[0])
 	fmt.Println("Options:")
 	pflag.PrintDefaults()
 	os.Exit(0)
 }
 
 func printArgErrMsgAndExit() {
-	fmt.Printf("Expected '%s [-c CONTAINER] [-n NAMESPACE] POD_NAME [COMMAND]'\n", os.Args[0])
+	fmt.Printf("Expected '%s POD_NAME [-c CONTAINER] [-n NAMESPACE] [-e COMMAND]'\n", os.Args[0])
 	fmt.Printf("POD is a required argument for the %s command\n", os.Args[0])
 
 	fmt.Println()
