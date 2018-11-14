@@ -1,5 +1,7 @@
 # Kubernetes pod exec showcase
+[![forthebadge](https://forthebadge.com/images/badges/built-with-grammas-recipe.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/made-with-go.svg)](https://forthebadge.com)
 
+[![forthebadge](https://forthebadge.com/images/badges/gluten-free.svg)](https://forthebadge.com)
 ## Overview
 
 The Kubernetes Pod Exec Showcase project shows the easiest implementation of the `kubectl exec` command. 
